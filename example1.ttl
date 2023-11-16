@@ -1,0 +1,76 @@
+@prefix ns1: <http://example.org/my_vis#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sbol: <http://sbols.org/v3#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://sbolstandard.org/testfiles/child> a sbol:Component ;
+    sbol:displayId "child" ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:type <https://identifiers.org/SBO:0000251> ;
+    prov:wasDerivedFrom <http://sbolstandard.org/testfiles/parent> ;
+    prov:wasGeneratedBy <http://sbolstandard.org/testfiles/in_silico_restriction> .
+
+<http://sbolstandard.org/testfiles/api> a sbol:TopLevel,
+        prov:Agent ;
+    ns1:api_url "http://example.org/api" ;
+    ns1:api_version "1.0" ;
+    ns1:request_method "POST" ;
+    sbol:description "Receives input seq and activity and returns child" ;
+    sbol:displayId "api" ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> .
+
+<http://sbolstandard.org/testfiles/in_silico_restriction> a sbol:TopLevel,
+        prov:Activity ;
+    sbol:description "Simulation of restriction digestion" ;
+    sbol:displayId "in_silico_restriction" ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:type sbol:design ;
+    prov:qualifiedAssociation <http://sbolstandard.org/testfiles/in_silico_restriction/Association1> ;
+    prov:qualifiedUsage <http://sbolstandard.org/testfiles/in_silico_restriction/Usage1> .
+
+<http://sbolstandard.org/testfiles/in_silico_restriction/Association1> a sbol:Identified,
+        prov:Association ;
+    sbol:displayId "Association1" ;
+    prov:agent <http://sbolstandard.org/testfiles/api> ;
+    prov:hadPlan <http://sbolstandard.org/testfiles/plan> ;
+    prov:hadRole sbol:design .
+
+<http://sbolstandard.org/testfiles/in_silico_restriction/Usage1> a sbol:Identified,
+        prov:Usage ;
+    sbol:displayId "Usage1" ;
+    prov:entity <http://sbolstandard.org/testfiles/parent> ;
+    prov:hadRole sbol:design .
+
+<http://sbolstandard.org/testfiles/parent/SO:00016871/Range1> a sbol:Range ;
+    sbol:displayId "Range1" ;
+    sbol:end 10 ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/seq> ;
+    sbol:start 0 .
+
+<http://sbolstandard.org/testfiles/plan> a sbol:TopLevel,
+        prov:Plan ;
+    ns1:cut_position <http://sbolstandard.org/testfiles/parent/SO:00016871> ;
+    ns1:enzyme_name "EcoRI" ;
+    sbol:description "Will contain fields describing position of cut" ;
+    sbol:displayId "plan" ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> .
+
+<http://sbolstandard.org/testfiles/parent> a sbol:Component ;
+    sbol:description "Parent sequence" ;
+    sbol:displayId "parent" ;
+    sbol:hasFeature <http://sbolstandard.org/testfiles/parent/SO:00016871> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/seq> ;
+    sbol:type <https://identifiers.org/SBO:0000251> .
+
+<http://sbolstandard.org/testfiles/parent/SO:00016871> a <https://identifiers.org/SO:0001687> ;
+    sbol:displayId "SO:00016871" ;
+    sbol:hasLocation <http://sbolstandard.org/testfiles/parent/SO:00016871/Range1> ;
+    sbol:name "EcoRI_recognition_site" .
+
+<http://sbolstandard.org/testfiles/seq> a sbol:Sequence ;
+    sbol:displayId "seq" ;
+    sbol:elements "atgnnntaa" ;
+    sbol:encoding <https://identifiers.org/edam:format_1207> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> .
+

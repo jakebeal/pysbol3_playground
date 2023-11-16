@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://example.org/my_vis#"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v3#"
+>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/in_silico_restriction/Association1">
+    <sbol:displayId>Association1</sbol:displayId>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Association"/>
+    <rdf:type rdf:resource="http://sbols.org/v3#Identified"/>
+    <prov:hadRole rdf:resource="http://sbols.org/v3#design"/>
+    <prov:hadPlan rdf:resource="http://sbolstandard.org/testfiles/plan"/>
+    <prov:agent rdf:resource="http://sbolstandard.org/testfiles/api"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/parent">
+    <sbol:displayId>parent</sbol:displayId>
+    <sbol:description>Parent sequence</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://sbolstandard.org/testfiles"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasSequence rdf:resource="http://sbolstandard.org/testfiles/seq"/>
+    <sbol:hasFeature rdf:resource="http://sbolstandard.org/testfiles/parent/SO:00016871"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/child">
+    <sbol:displayId>child</sbol:displayId>
+    <prov:wasDerivedFrom rdf:resource="http://sbolstandard.org/testfiles/parent"/>
+    <prov:wasGeneratedBy rdf:resource="http://sbolstandard.org/testfiles/in_silico_restriction"/>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://sbolstandard.org/testfiles"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/seq">
+    <sbol:displayId>seq</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://sbolstandard.org/testfiles"/>
+    <sbol:elements>atgnnntaa</sbol:elements>
+    <sbol:encoding rdf:resource="https://identifiers.org/edam:format_1207"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/in_silico_restriction">
+    <sbol:displayId>in_silico_restriction</sbol:displayId>
+    <sbol:description>Simulation of restriction digestion</sbol:description>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdf:type rdf:resource="http://sbols.org/v3#TopLevel"/>
+    <sbol:hasNamespace rdf:resource="http://sbolstandard.org/testfiles"/>
+    <sbol:type rdf:resource="http://sbols.org/v3#design"/>
+    <prov:qualifiedUsage rdf:resource="http://sbolstandard.org/testfiles/in_silico_restriction/Usage1"/>
+    <prov:qualifiedAssociation rdf:resource="http://sbolstandard.org/testfiles/in_silico_restriction/Association1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/parent/SO:00016871/Range1">
+    <sbol:displayId>Range1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Range"/>
+    <sbol:hasSequence rdf:resource="http://sbolstandard.org/testfiles/seq"/>
+    <sbol:start rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sbol:start>
+    <sbol:end rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sbol:end>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/api">
+    <sbol:displayId>api</sbol:displayId>
+    <sbol:description>Receives input seq and activity and returns child</sbol:description>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdf:type rdf:resource="http://sbols.org/v3#TopLevel"/>
+    <sbol:hasNamespace rdf:resource="http://sbolstandard.org/testfiles"/>
+    <ns1:api_version>1.0</ns1:api_version>
+    <ns1:api_url>http://example.org/api</ns1:api_url>
+    <ns1:request_method>POST</ns1:request_method>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/parent/SO:00016871">
+    <sbol:displayId>SO:00016871</sbol:displayId>
+    <sbol:name>EcoRI_recognition_site</sbol:name>
+    <rdf:type rdf:resource="https://identifiers.org/SO:0001687"/>
+    <sbol:hasLocation rdf:resource="http://sbolstandard.org/testfiles/parent/SO:00016871/Range1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/in_silico_restriction/Usage1">
+    <sbol:displayId>Usage1</sbol:displayId>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Usage"/>
+    <rdf:type rdf:resource="http://sbols.org/v3#Identified"/>
+    <prov:entity rdf:resource="http://sbolstandard.org/testfiles/parent"/>
+    <prov:hadRole rdf:resource="http://sbols.org/v3#design"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sbolstandard.org/testfiles/plan">
+    <sbol:displayId>plan</sbol:displayId>
+    <sbol:description>Will contain fields describing position of cut</sbol:description>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+    <rdf:type rdf:resource="http://sbols.org/v3#TopLevel"/>
+    <sbol:hasNamespace rdf:resource="http://sbolstandard.org/testfiles"/>
+    <ns1:enzyme_name>EcoRI</ns1:enzyme_name>
+    <ns1:cut_position rdf:resource="http://sbolstandard.org/testfiles/parent/SO:00016871"/>
+  </rdf:Description>
+</rdf:RDF>

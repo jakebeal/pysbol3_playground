@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pysbol3-playground"
+version = "0.1.0"
+description = ""
+authors = ["Manuel Lera Ramirez <manulera14@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+sbol3 = "^1.1"
+pygraphviz = "^1.11"
+tyto = "^1.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
