@@ -1,3 +1,3 @@
 
 python example1.py
-python rdfUmlDiagram.py --hide-namespaces example1.ttl 
+python rdfUmlDiagram.py example1.ttl 

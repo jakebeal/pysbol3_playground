@@ -5,9 +5,9 @@ sbol3.set_namespace('http://sbolstandard.org/testfiles')
 
 doc = sbol3.Document()
 
-
+print(tyto.SO.restriction_enzyme_recognition_site)
 sequence = sbol3.Sequence('seq' , elements='atgnnntaa', encoding=sbol3.IUPAC_DNA_ENCODING)
-cut_site = sbol3.SequenceFeature(sbol3.Range(sequence, 0, 10), type_uri=tyto.SO.restriction_enzyme_recognition_site, name='EcoRI_recognition_site')
+cut_site = sbol3.SequenceFeature(sbol3.Range(sequence, 0, 10), roles=[tyto.SO.restriction_enzyme_recognition_site], name='EcoRI_recognition_site')
 
 parent_sequence = sbol3.Component('parent', sbol3.SBO_DNA, features=[cut_site], sequences=[sequence], description='Parent sequence')
 

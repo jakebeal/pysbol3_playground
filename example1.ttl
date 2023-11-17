@@ -41,7 +41,7 @@
     prov:entity <http://sbolstandard.org/testfiles/parent> ;
     prov:hadRole sbol:design .
 
-<http://sbolstandard.org/testfiles/parent/SO:00016871/Range1> a sbol:Range ;
+<http://sbolstandard.org/testfiles/parent/SequenceFeature1/Range1> a sbol:Range ;
     sbol:displayId "Range1" ;
     sbol:end 10 ;
     sbol:hasSequence <http://sbolstandard.org/testfiles/seq> ;
@@ -49,7 +49,7 @@
 
 <http://sbolstandard.org/testfiles/plan> a sbol:TopLevel,
         prov:Plan ;
-    ns1:cut_position <http://sbolstandard.org/testfiles/parent/SO:00016871> ;
+    ns1:cut_position <http://sbolstandard.org/testfiles/parent/SequenceFeature1> ;
     ns1:enzyme_name "EcoRI" ;
     sbol:description "Will contain fields describing position of cut" ;
     sbol:displayId "plan" ;
@@ -58,15 +58,16 @@
 <http://sbolstandard.org/testfiles/parent> a sbol:Component ;
     sbol:description "Parent sequence" ;
     sbol:displayId "parent" ;
-    sbol:hasFeature <http://sbolstandard.org/testfiles/parent/SO:00016871> ;
+    sbol:hasFeature <http://sbolstandard.org/testfiles/parent/SequenceFeature1> ;
     sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
     sbol:hasSequence <http://sbolstandard.org/testfiles/seq> ;
     sbol:type <https://identifiers.org/SBO:0000251> .
 
-<http://sbolstandard.org/testfiles/parent/SO:00016871> a <https://identifiers.org/SO:0001687> ;
-    sbol:displayId "SO:00016871" ;
-    sbol:hasLocation <http://sbolstandard.org/testfiles/parent/SO:00016871/Range1> ;
-    sbol:name "EcoRI_recognition_site" .
+<http://sbolstandard.org/testfiles/parent/SequenceFeature1> a sbol:SequenceFeature ;
+    sbol:displayId "SequenceFeature1" ;
+    sbol:hasLocation <http://sbolstandard.org/testfiles/parent/SequenceFeature1/Range1> ;
+    sbol:name "EcoRI_recognition_site" ;
+    sbol:role <https://identifiers.org/SO:0001687> .
 
 <http://sbolstandard.org/testfiles/seq> a sbol:Sequence ;
     sbol:displayId "seq" ;

@@ -10,6 +10,7 @@ python = "^3.9"
 sbol3 = "^1.1"
 pygraphviz = "^1.11"
 tyto = "^1.4"
+sbol-utilities = "^1.0a17"
 
 
 [build-system]
