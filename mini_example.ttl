@@ -1,0 +1,8 @@
+@prefix sbol: <http://sbols.org/v3#> .
+
+<http://sbolstandard.org/testfiles/aComp> a sbol:Component ;
+    sbol:description "example component" ;
+    sbol:displayId "aComp" ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:type <https://identifiers.org/SBO:0000251> .
+
