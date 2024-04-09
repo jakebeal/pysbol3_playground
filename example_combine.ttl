@@ -1,0 +1,238 @@
+@prefix sbol: <http://sbols.org/v3#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://sbolstandard.org/testfiles/ligation_component> a sbol:Component ;
+    sbol:displayId "ligation_component" ;
+    sbol:hasInteraction <http://sbolstandard.org/testfiles/ligation_component/Interaction1> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:type sbol:Component .
+
+<http://sbolstandard.org/testfiles/pcr_prod_digestion_component> a sbol:Component ;
+    sbol:displayId "pcr_prod_digestion_component" ;
+    sbol:hasInteraction <http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:type sbol:Component .
+
+<http://sbolstandard.org/testfiles/plasmid_digestion_component> a sbol:Component ;
+    sbol:displayId "plasmid_digestion_component" ;
+    sbol:hasInteraction <http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:type sbol:Component .
+
+<http://sbolstandard.org/testfiles/final_prod> a sbol:Component ;
+    sbol:description "final_prod" ;
+    sbol:displayId "final_prod" ;
+    sbol:hasFeature <http://sbolstandard.org/testfiles/final_prod/SubComponent1>,
+        <http://sbolstandard.org/testfiles/final_prod/SubComponent2>,
+        <http://sbolstandard.org/testfiles/final_prod/SubComponent3>,
+        <http://sbolstandard.org/testfiles/final_prod/SubComponent4>,
+        <http://sbolstandard.org/testfiles/final_prod/SubComponent5>,
+        <http://sbolstandard.org/testfiles/final_prod/SubComponent6>,
+        <http://sbolstandard.org/testfiles/final_prod/SubComponent7> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/final_prod_seq> ;
+    sbol:type <https://identifiers.org/SBO:0000251> .
+
+<http://sbolstandard.org/testfiles/ligation_component/Interaction1> a sbol:Interaction ;
+    sbol:displayId "Interaction1" ;
+    sbol:hasParticipation <http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation1>,
+        <http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation2>,
+        <http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation3>,
+        <http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation4> ;
+    sbol:name "ligation" ;
+    sbol:type <https://identifiers.org/SBO:0000182> .
+
+<http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation1> a sbol:Participation ;
+    sbol:displayId "Participation1" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent4> ;
+    sbol:role <https://identifiers.org/SBO:0000010> .
+
+<http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation2> a sbol:Participation ;
+    sbol:displayId "Participation2" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent5> ;
+    sbol:role <https://identifiers.org/SBO:0000010> .
+
+<http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation3> a sbol:Participation ;
+    sbol:displayId "Participation3" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent3> ;
+    sbol:role <https://identifiers.org/SBO:0000011> .
+
+<http://sbolstandard.org/testfiles/ligation_component/Interaction1/Participation4> a sbol:Participation ;
+    sbol:displayId "Participation4" ;
+    sbol:participant <http://sbolstandard.org/testfiles/pcr_prod/SubComponent1> ;
+    sbol:role <https://identifiers.org/SBO:0000019> .
+
+<http://sbolstandard.org/testfiles/pcr_prod> a sbol:Component ;
+    sbol:description "pcr_prod" ;
+    sbol:displayId "pcr_prod" ;
+    sbol:hasFeature <http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature1>,
+        <http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature2>,
+        <http://sbolstandard.org/testfiles/pcr_prod/SubComponent1> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/pcr_prod_seq> ;
+    sbol:type <https://identifiers.org/SBO:0000251> .
+
+<http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature1> a sbol:SequenceFeature ;
+    sbol:displayId "SequenceFeature1" ;
+    sbol:hasLocation <http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature1/Range1> ;
+    sbol:name "salI_on_pcr_prod" ;
+    sbol:role <https://identifiers.org/SO:0001687> .
+
+<http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature1/Range1> a sbol:Range ;
+    sbol:displayId "Range1" ;
+    sbol:end 12 ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/pcr_prod_seq> ;
+    sbol:start 7 .
+
+<http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature2> a sbol:SequenceFeature ;
+    sbol:displayId "SequenceFeature2" ;
+    sbol:hasLocation <http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature2/Range1> ;
+    sbol:name "ascI_on_pcr_prod" ;
+    sbol:role <https://identifiers.org/SO:0001687> .
+
+<http://sbolstandard.org/testfiles/pcr_prod/SequenceFeature2/Range1> a sbol:Range ;
+    sbol:displayId "Range1" ;
+    sbol:end 2263 ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/pcr_prod_seq> ;
+    sbol:start 2256 .
+
+<http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1> a sbol:Interaction ;
+    sbol:displayId "Interaction1" ;
+    sbol:hasParticipation <http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation1>,
+        <http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation2>,
+        <http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation3>,
+        <http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation4> ;
+    sbol:name "pcr_prod_digestion" ;
+    sbol:type <https://identifiers.org/SBO:0000178> .
+
+<http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation1> a sbol:Participation ;
+    sbol:displayId "Participation1" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent2> ;
+    sbol:role <https://identifiers.org/SBO:0000010> .
+
+<http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation2> a sbol:Participation ;
+    sbol:displayId "Participation2" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent5> ;
+    sbol:role <https://identifiers.org/SBO:0000011> .
+
+<http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation3> a sbol:Participation ;
+    sbol:displayId "Participation3" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent6> ;
+    sbol:role <https://identifiers.org/SBO:0000019> .
+
+<http://sbolstandard.org/testfiles/pcr_prod_digestion_component/Interaction1/Participation4> a sbol:Participation ;
+    sbol:displayId "Participation4" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent7> ;
+    sbol:role <https://identifiers.org/SBO:0000019> .
+
+<http://sbolstandard.org/testfiles/plasmid> a sbol:Component ;
+    sbol:description "plasmid" ;
+    sbol:displayId "plasmid" ;
+    sbol:hasFeature <http://sbolstandard.org/testfiles/plasmid/SequenceFeature1>,
+        <http://sbolstandard.org/testfiles/plasmid/SequenceFeature2> ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/plasmid_seq> ;
+    sbol:type <https://identifiers.org/SBO:0000251> .
+
+<http://sbolstandard.org/testfiles/plasmid/SequenceFeature1> a sbol:SequenceFeature ;
+    sbol:displayId "SequenceFeature1" ;
+    sbol:hasLocation <http://sbolstandard.org/testfiles/plasmid/SequenceFeature1/Range1> ;
+    sbol:name "salI_on_plasmid" ;
+    sbol:role <https://identifiers.org/SO:0001687> .
+
+<http://sbolstandard.org/testfiles/plasmid/SequenceFeature1/Range1> a sbol:Range ;
+    sbol:displayId "Range1" ;
+    sbol:end 42 ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/plasmid_seq> ;
+    sbol:start 37 .
+
+<http://sbolstandard.org/testfiles/plasmid/SequenceFeature2> a sbol:SequenceFeature ;
+    sbol:displayId "SequenceFeature2" ;
+    sbol:hasLocation <http://sbolstandard.org/testfiles/plasmid/SequenceFeature2/Range1> ;
+    sbol:name "ascI_on_plasmid" ;
+    sbol:role <https://identifiers.org/SO:0001687> .
+
+<http://sbolstandard.org/testfiles/plasmid/SequenceFeature2/Range1> a sbol:Range ;
+    sbol:displayId "Range1" ;
+    sbol:end 69 ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/plasmid_seq> ;
+    sbol:start 62 .
+
+<http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1> a sbol:Interaction ;
+    sbol:displayId "Interaction1" ;
+    sbol:hasParticipation <http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation1>,
+        <http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation2>,
+        <http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation3>,
+        <http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation4> ;
+    sbol:name "plasmid_digestion" ;
+    sbol:type <https://identifiers.org/SBO:0000178> .
+
+<http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation1> a sbol:Participation ;
+    sbol:displayId "Participation1" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent1> ;
+    sbol:role <https://identifiers.org/SBO:0000010> .
+
+<http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation2> a sbol:Participation ;
+    sbol:displayId "Participation2" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent4> ;
+    sbol:role <https://identifiers.org/SBO:0000011> .
+
+<http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation3> a sbol:Participation ;
+    sbol:displayId "Participation3" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent6> ;
+    sbol:role <https://identifiers.org/SBO:0000019> .
+
+<http://sbolstandard.org/testfiles/plasmid_digestion_component/Interaction1/Participation4> a sbol:Participation ;
+    sbol:displayId "Participation4" ;
+    sbol:participant <http://sbolstandard.org/testfiles/final_prod/SubComponent7> ;
+    sbol:role <https://identifiers.org/SBO:0000019> .
+
+<http://sbolstandard.org/testfiles/restricted_pcr_prod> a sbol:Component ;
+    sbol:description "restricted_pcr_prod" ;
+    sbol:displayId "restricted_pcr_prod" ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/restricted_pcr_prod_seq> ;
+    sbol:type <https://identifiers.org/SBO:0000251> .
+
+<http://sbolstandard.org/testfiles/restricted_plasmid> a sbol:Component ;
+    sbol:description "restricted_plasmid" ;
+    sbol:displayId "restricted_plasmid" ;
+    sbol:hasNamespace <http://sbolstandard.org/testfiles> ;
+    sbol:hasSequence <http://sbolstandard.org/testfiles/restricted_plasmid_seq> ;
+    sbol:type <https://identifiers.org/SBO:0000251> .
+
+<http://sbolstandard.org/testfiles/final_prod/SubComponent1> a sbol:SubComponent ;
+    sbol:displayId "SubComponent1" ;
+    sbol:instanceOf <http://sbolstandard.org/testfiles/plasmid> .
+
+<http://sbolstandard.org/testfiles/final_prod/SubComponent2> a sbol:SubComponent ;
+    sbol:displayId "SubComponent2" ;
+    sbol:instanceOf <http://sbolstandard.org/testfiles/pcr_prod> .
+
+<http://sbolstandard.org/testfiles/final_prod/SubComponent3> a sbol:SubComponent ;
+    sbol:displayId "SubComponent3" ;
+    sbol:instanceOf <http://sbolstandard.org/testfiles/final_prod> .
+
+<http://sbolstandard.org/testfiles/pcr_prod/SubComponent1> a sbol:SubComponent ;
+    sbol:description "T4 DNA ligase" ;
+    sbol:displayId "SubComponent1" ;
+    sbol:instanceOf <http://purl.obolibrary.org/obo/blah> .
+
+<http://sbolstandard.org/testfiles/final_prod/SubComponent4> a sbol:SubComponent ;
+    sbol:displayId "SubComponent4" ;
+    sbol:instanceOf <http://sbolstandard.org/testfiles/restricted_plasmid> .
+
+<http://sbolstandard.org/testfiles/final_prod/SubComponent5> a sbol:SubComponent ;
+    sbol:displayId "SubComponent5" ;
+    sbol:instanceOf <http://sbolstandard.org/testfiles/restricted_pcr_prod> .
+
+<http://sbolstandard.org/testfiles/final_prod/SubComponent6> a sbol:SubComponent ;
+    sbol:description "EcoRI restriction enzyme" ;
+    sbol:displayId "SubComponent6" ;
+    sbol:instanceOf <http://purl.obolibrary.org/obo/PR_Q53608> .
+
+<http://sbolstandard.org/testfiles/final_prod/SubComponent7> a sbol:SubComponent ;
+    sbol:description "XbaI restriction enzyme" ;
+    sbol:displayId "SubComponent7" ;
+    sbol:instanceOf <http://purl.obolibrary.org/obo/PR_E3VXA3> .
+
