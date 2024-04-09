@@ -1,0 +1,56 @@
+[
+  {
+    "id": 9,
+    "kind": "source",
+    "input": [],
+    "output": 10,
+    "type": "file",
+    "file_name": "addgene-plasmid-39296-sequence-49545.dna",
+    "file_format": "snapgene",
+    "index_in_file": 0
+  },
+  {
+    "id": 36,
+    "input": [],
+    "output": 37,
+    "type": "genome_coordinates",
+    "kind": "source",
+    "info": {},
+    "assembly_accession": "GCF_000002945.1",
+    "sequence_accession": "NC_003424.3",
+    "locus_tag": "SPAPB1A10.09",
+    "gene_id": 2543372,
+    "start": 1877009,
+    "stop": 1881726,
+    "strand": 1
+  },
+  {
+    "id": 38,
+    "input": [37],
+    "output": 39,
+    "type": "PCR",
+    "kind": "source",
+    "info": {},
+    "assembly": [
+      [1, 2, "13..34", "1354..1375"],
+      [2, -3, "3574..3597", "1..24"]
+    ],
+    "circular": false,
+    "forward_primer": 3,
+    "reverse_primer": 5
+  },
+  {
+    "id": 40,
+    "input": [39, 10],
+    "output": 41,
+    "type": "restriction_and_ligation",
+    "kind": "source",
+    "info": {},
+    "assembly": [
+      [1, 2, "2258..2261", "64..67"],
+      [2, 1, "38..41", "8..11"]
+    ],
+    "circular": true,
+    "restriction_enzymes": ["AscI", "SalI"]
+  }
+]
